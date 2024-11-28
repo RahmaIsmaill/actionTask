@@ -16,12 +16,10 @@ jobs:
         run: pwd
 
       - name: Printbefore
-        run: echo Rahomah
         run: ls -a
 
       - name: Checkout repository
         uses: actions/checkout@v2
 
       - name: PrintAfter
-        run: echo Rahomah
         run: ls -a
