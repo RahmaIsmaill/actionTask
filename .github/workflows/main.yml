@@ -1,14 +1,20 @@
+
+
 on:
-push:
-  branches:
-  - master
+  push:
+    branches:
+      - master
+
 jobs:
   build:
-     runs-on: ubuntu-latest
+    runs-on: ubuntu-latest
 
-     steps:
-       - name: 'Testing' 
-         run: pwd
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
 
-          - name: 'print' 
-         run: echo Rahomah
+      - name: Testing
+        run: pwd
+
+      - name: Print
+        run: echo Rahomah
