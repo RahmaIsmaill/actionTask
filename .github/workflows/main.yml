@@ -10,16 +10,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-     
-
-      - name: Testing
-        run: pwd
-
-      - name: Printbefore
-        run: ls -a
-
-      - name: Checkout repository
         uses: actions/checkout@v2
 
-      - name: PrintAfter
-        run: ls -a
+        name: "Login"
+        run: docker login --username rahmaismaill6 --password dckr_pat_dW9nnjQNnRpj3R0FiYG_maPV4D0
