@@ -1,4 +1,4 @@
-name: CI
+
 
 on:
   push:
@@ -14,4 +14,7 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Login to Docker
-        run: docker login --username ${{ secrets.DOCKER_USERNAME }} --password ${{ secrets.DOCKER_TOKEN }}
+        env:
+          DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
+          DOCKER_TOKEN: ${{ secrets.DOCKER_TOKEN }}
+        run: echo $DOCKER_TOKEN | docker login --username $DOCKER_USERNAME --password-stdin
